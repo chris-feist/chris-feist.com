@@ -1,5 +1,6 @@
 const {VERIFICATION_ID, ANALYTICS_ID} = process.env;
 
+console.log('chris_ env', process.env);
 module.exports = {
   siteMetadata: {
     title: `Chris Feist`,
