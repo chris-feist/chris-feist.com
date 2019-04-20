@@ -1,0 +1,9 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+
+//$gradientTopLeft: darken(saturate(adjust-hue(@primaryColor, -10deg), 10%), 10%);
+//$gradientBottomRight: lighten(saturate(adjust-hue(@primaryColor, 10deg), 5%), 5%);
+//$hero: linear-gradient(141deg, $gradientTopLeft 0%, @primaryColor 71%, $gradientBottomRight 100%);
+
+@invertedBackground: linear-gradient(141deg, darken(saturate(@primaryColor, 10%), 10%) 0%, @primaryColor 71%, lighten(saturate(@primaryColor, 5%), 5%) 100%);
