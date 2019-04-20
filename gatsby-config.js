@@ -11,13 +11,13 @@ module.exports = {
   },
   plugins: [
     // Expose `/data` to graphQL layer
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `data`,
-        path: `${__dirname}/data`
-      }
-    },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `data`,
+    //     path: `${__dirname}/data`
+    //   }
+    // },
 
     {
       resolve: `gatsby-plugin-google-analytics`,
