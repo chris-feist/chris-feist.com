@@ -48,7 +48,7 @@ export const parseQuery = (response: QueryResponse): Post[] => (
       clapCount: virtuals.totalClapCount,
       createdOn: createdAt,
       id,
-      image: `https://cdn-images-1.medium.com/max/2600/${virtuals.previewImage.imageId}`,
+      image: `https://cdn-images-1.medium.com/max/512/${virtuals.previewImage.imageId}`,
       readingTime: virtuals.readingTime,
       subtitle: virtuals.subtitle,
       tags: virtuals.tags.map(({ name }) => name),
