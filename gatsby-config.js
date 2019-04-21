@@ -75,9 +75,22 @@ module.exports = {
         name: `Chris Feist`,
         short_name: `Chris Feist`,
         start_url: `/`,
-        background_color: `#f7f7f7`,
+        background_color: `#5da6e5`,
         theme_color: `#5da6e5`,
-        display: `minimal-ui`
+        display: `standalone`,
+        icon: `assets/icon.png`,
+        icons: [
+          {
+            src: '/assets/splash-192.png',
+            type: 'image/png',
+            sizes: '192x192'
+          },
+          {
+            src: '/assets/splash-512.png',
+            type: 'image/png',
+            sizes: '512x512'
+          }
+        ]
       }
     },
     /* eslint-enable camelcase */
@@ -96,7 +109,6 @@ module.exports = {
       }
     }
 
-    // TODO: https://github.com/Creatiwity/gatsby-plugin-favicon
     // TODO: https://www.gatsbyjs.org/packages/gatsby-plugin-purgecss/?=
   ]
 };
