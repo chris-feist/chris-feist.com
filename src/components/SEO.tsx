@@ -28,7 +28,7 @@ const SEO = ({ title, description, image, pathname, article }: Props) => (
     }) => {
       const seo = {
         description: description || defaultDescription,
-        image: `${siteUrl}${image || defaultImage}`,
+        image: `${siteUrl}/${image || defaultImage}`,
         title: title || defaultTitle,
         titleTemplate: title ? titleTemplate : undefined,
         url: `${siteUrl}${pathname || '/'}`,
