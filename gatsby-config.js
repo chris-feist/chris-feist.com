@@ -3,7 +3,12 @@ const {VERIFICATION_ID, ANALYTICS_ID} = process.env;
 module.exports = {
   siteMetadata: {
     title: `Chris Feist`,
+    description: 'Chris Feist - Full Stack Developer in the greater Seattle area',
+    headline: 'Chris Feist - Full Stack Developer',
     siteUrl: 'https://www.chris-feist.com',
+    image: 'assets/icon.png',
+    titleTemplate: 'Chris Feist - %s',
+    author: 'Chris Feist',
     googleVerification: VERIFICATION_ID
   },
   mapping: {

@@ -8,6 +8,7 @@ import '../css/responsive.css';
 import 'prismjs/themes/prism-okaidia.css';
 import { Provider } from 'react-redux';
 import { store } from '../store';
+import SEO from './SEO';
 
 export const menuItems = [
   { name: 'Home', path: '/', exact: true, icon: 'home', inverted: true },
@@ -20,34 +21,47 @@ export interface LayoutProps {
     pathname: string;
   };
   children: any;
+  seo?: {
+    title?: string;
+    description?: string;
+    image?: string;
+    pathname?: string;
+    article?: boolean;
+  };
 }
 
 const Layout = (props: LayoutProps) => {
   const { pathname } = props.location;
   const isHome = pathname === '/';
 
+  const currentMenu = menuItems.find(({path}) => pathname === path);
+  const seo = props.seo || (!isHome && currentMenu ? { title: currentMenu.name } : undefined);
+
   return (
     <Provider store={store}>
-      <Segment basic style={{ padding: 0, minHeight: '100vh' }}>
-        {/* Header */}
-        {isHome ? null : <HeaderMenu
-          Link={Link}
-          pathname={pathname}
-          items={menuItems}
-        />}
+      <React.Fragment>
+        <SEO {...seo}/>
+        <Segment basic style={{ padding: 0, minHeight: '100vh' }}>
+          {/* Header */}
+          {isHome ? null : <HeaderMenu
+            Link={Link}
+            pathname={pathname}
+            items={menuItems}
+          />}
 
-        {/* Render children pages */}
-        <div style={{ paddingBottom: 60 }}>
-          {props.children}
-        </div>
+          {/* Render children pages */}
+          <div style={{ paddingBottom: 60 }}>
+            {props.children}
+          </div>
 
-        {/* Footer */}
-        <Segment inverted vertical style={{ position: 'absolute', bottom: 0, width: '100%' }}>
-          <Container textAlign="center">
-            <p>Powered with <Icon name="heart" /> by <a href="https://www.gatsbyjs.org">Gatsby</a></p>
-          </Container>
+          {/* Footer */}
+          <Segment inverted vertical style={{ position: 'absolute', bottom: 0, width: '100%' }}>
+            <Container textAlign="center">
+              <p>Powered with <Icon name="heart" /> by <a href="https://www.gatsbyjs.org">Gatsby</a></p>
+            </Container>
+          </Segment>
         </Segment>
-      </Segment>
+      </React.Fragment>
     </Provider>
   );
 };
