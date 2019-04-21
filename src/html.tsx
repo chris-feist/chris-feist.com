@@ -19,9 +19,6 @@ export default (props: HtmlProps) => {
     name="google-site-verification"
     content={config.siteMetadata.googleVerification} /> : null;
 
-  console.log('chris_ config.siteMetadata', config.siteMetadata);
-  console.log('chris_ process.env', process.env);
-  console.log('chris_ verification', verification);
   return (
     <html lang="en">
       <head>
