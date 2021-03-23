@@ -24,7 +24,7 @@ const AboutPage = () => {
         </p>
       </Segment>
       <Segment basic>
-        <SocialLink iconName="medium m" url="https://medium.com/@chris.feist"/>
+        <SocialLink iconName="medium m" url="https://chris-feist.medium.com/"/>
         <SocialLink iconName="github" url="https://github.com/chris-feist"/>
         <SocialLink iconName="linkedin" url="https://www.linkedin.com/in/chris-feist/"/>
         <SocialLink iconName="stack overflow" url="https://stackoverflow.com/users/1007510/chris-feist"/>
